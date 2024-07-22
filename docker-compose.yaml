@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    postgres:
+        container_name: test_postgres
+        image: postgres:14-alpine
+        ports:
+            - 5432:5432
+        volumes:
+            - ./data_db:/var/lib/postgresql/data
+        environment:
+            POSTGRES_PASSWORD: 1234
+            POSTGRES_USER: castel
+            POSTGRES_DB: test_db
